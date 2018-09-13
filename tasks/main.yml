@@ -1,0 +1,17 @@
+---
+# tasks file for ansible-role-nginx
+- include_tasks: check_distribution_and_version.yml
+  tags: [always]
+
+- include_tasks: install.yml
+  tags: [nginx, packages]
+
+- include_tasks: remove_defaults.yml
+  when: not nginx_keep_defualt_config_intact
+  tags: [nginx, configuration]
+
+- include_tasks: configure.yml
+  tags: [nginx, configuration]
+
+- include_tasks: service.yml
+  tags: [nginx, configuration]

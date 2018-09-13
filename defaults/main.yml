@@ -1,0 +1,39 @@
+---
+# defaults file for ansible-role-nginx
+nginx_keep_default_config_intact: "{{ nginx_keep_default_config_intact }}"
+nginx_conf_dir: /etc/nginx
+
+# user, group and etc
+nginx_user: "{{ nginx_user }}"
+nginx_group: "{{ nginx_group }}"
+nignx_worker_processes: "{{ nignx_worker_processes }}"
+nginx_daemon: "{{ nginx_daemon }}"
+
+# events
+nginx_worker_connection: "{{ nginx_worker_connection }}"
+
+# http
+nginx_sendfile: "{{ nginx_sendfile }}"
+nginx_tcp_nopush: "{{ nginx_tcp_nopush }}"
+nginx_tcp_nodelay: "{{ nginx_tcp_nodelay }}"
+nginx_keepalive_timeout: "{{ nginx_keepalive_timeout }}"
+nginx_types_hash_max_size: "{{ nginx_types_hash_max_size }}"
+nignx_include_mime_types: "{{ nignx_include_mime_types }}"
+nginx_defualt_type: "{{ nginx_default_type }}"
+nginx_ssl_protocols: "{{ nginx_ssl_protoocls }}"
+nginx_prefer_server_ciphers: "{{ nginx_prefer_server_ciphers }}"
+nginx_pid: "{{ nginx_pid }}"
+nginx_access_log: "{{ nginx_access_log }}"
+nginx_error_log: "{{ nginx_error_log }}"
+nginx_gzip: "{{ nginx_gzip }}"
+nginx_gzip_disable: "{{ gzip_disable }}"
+
+
+# sites liked to sites-enabled
+nginx_default_site_template: /usr/share/nginx/html
+nginx_site_root: /usr/share/nginx/html
+
+# write conf files at ../files
+nginx_sites:
+  - default
+  - ssl-enabled-site
