@@ -1,0 +1,33 @@
+---
+# vars file for ansible-role-ngin
+
+nginx_keep_default_config_intact: false
+
+# user, group and etc
+nginx_user: nginx
+nginx_group: "{{ nginx_user }}"
+nginx_worker_processes: auto
+nginx_daemon: "on"
+
+# events
+nginx_worker_connection: 1024
+
+# http
+nginx_sendfile: "on"
+nginx_tcp_nopush: "on"
+nginx_tcp_nodelay: "on"
+nginx_keepalive_timeout: 60
+nginx_types_hash_max_size: 2048
+
+nignx_include_mime_types: /etc/nginx/mime.types
+nginx_default_type: application/octet-stream
+
+nginx_ssl_protocols: TLSv1 TLSv1.1 TLSv1.2
+nginx_prefer_server_ciphers: "on"
+
+nginx_gzip: "on"
+nginx_gzip_disable: msie6
+
+nginx_pid: /var/run/nginx.pid
+nginx_access_log: /var/log/nginx/access.log
+nginx_error_log: /var/log/nginx/error.log

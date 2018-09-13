@@ -1,0 +1,13 @@
+---
+- include_tasks: install.yml
+  tags: [nginx, packages]
+
+- include_tasks: remove_defaults.yml
+  when: not nginx_keep_default_config_intact
+  tags: [nginx, configuration]
+
+- include_tasks: configure.yml
+  tags: [nginx, configuration]
+
+- include_tasks: service.yml
+  tags: [nginx, configuration]
