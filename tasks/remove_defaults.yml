@@ -1,0 +1,14 @@
+---
+- name: Remove default site
+  file:
+    path: "{{ nginx_conf_dir }}/conf.d/default.conf"
+    state: absent
+  notify:
+    - restart nginx
+
+- name: Remove the default config
+  file:
+    path: "{{nginx_conf_dir}}/conf.d/default.conf"
+    state: absent
+  notify:
+    - restart nginx
